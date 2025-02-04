@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background-main: #3B4664;
+  --color-background-toggle: #242D44;
+  --color-background-screen: #191F32;
+  --color-dark-violet: hsl(281, 89%, 26%);
+
+  --color-text-dark-blue: #444B5A;
+
+  --color-dark-backround: hsl(268, 75%, 9%);
+
+  --color-light-background: hsl(0, 0%, 90%);
+  --color-light-background-toggle: hsl(0, 5%, 81%);
+
+  --color-default-key: hsl(30, 25%, 89%);
+  --color-default-key-hover: hsl(30, 25%, 95%);
+  --color-default-key-shadow: hsl(28, 16%, 65%);
+  --color-default-key-reset: hsl(225, 21%, 49%);
+  --color-default-key-reset-hover: hsl(225, 21%, 59%);
+  --color-default-key-reset-shadow: hsl(224, 28%, 35%);
+  --color-default-key-total: hsl(6, 63%, 50%);
+  --color-default-key-total-hover: hsl(6, 63%, 55%);
+  --color-default-key-total-shadow: hsl(6, 70%, 34%);
+
+  /* Dark */
+  --color-magenta-950: hsla(268, 75%, 9%, 1);
+  --color-magenta-900: hsla(268, 75%, 15%, 1);
+  --color-magenta-800: hsla(268, 75%, 20%, 1);
+  --color-magenta-700: hsla(268, 75%, 25%, 1);
+  --color-magenta-600: hsla(268, 75%, 50%, 1);
+  --color-magenta-500: hsla(268, 75%, 60%, 1);
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant light (&:where([data-theme=light], [data-theme=light] *));
+
+body {
+  font-family: 'League spartan', sans-serif;
+}
+
+@layer components {
+  .button--light {
+    box-shadow: 0 -4px 1px 1px var(--color-default-key-shadow) inset;
+
+    @variant dark {
+      box-shadow: 0 -4px 1px 1px var(--color-magenta-800) inset;
+    }
+  }
+  .button--blue {
+    box-shadow: 0 -4px 1px 1px var(--color-default-key-reset-shadow) inset;
+
+    @variant light {
+      box-shadow: 0 -4px 1px 1px var(--color-teal-700) inset;
+    }
+
+    @variant dark {
+      box-shadow: 0 -4px 1px 1px var(--color-magenta-700) inset;
+    }
+  }
+  .button--red {
+    box-shadow: 0 -4px 1px 1px var(--color-default-key-total-shadow) inset;
+
+    @variant light {
+      box-shadow: 0 -4px 1px 1px var(--color-amber-600) inset;
+    }
+
+    @variant dark {
+      box-shadow: 0 -4px 1px 1px var(--color-amber-500) inset;
+    }
+  }
+}
